@@ -34,13 +34,13 @@ public class EmpresaEntity {
 
     private String direccion;
 
-    @Column(nullable = false,length = 100)
+    @Column(nullable = true,length = 100)
     private String distrito;
 
-    @Column(nullable = false,length = 100)
+    @Column(nullable = true,length = 100)
     private String provincia;
 
-    @Column(nullable = false,length = 100)
+    @Column(nullable = true,length = 100)
     private String departamento;
 
     @Column(name="esagenteretencion",nullable = false)
@@ -55,13 +55,13 @@ public class EmpresaEntity {
     @Column(name="usuamodif",nullable = true,length = 255)
     private String usuaModif;
 
-    @Column(name="datemodif",nullable = false)
+    @Column(name="datemodif",nullable = true)
     private Timestamp dateModif;
 
     @Column(name="usuadelet",nullable = true,length = 255)
     private String usuaDelet;
 
-    @Column(name="datedelet",nullable = false)
+    @Column(name="datedelet",nullable = true)
     private Timestamp dateDelet;
 
 

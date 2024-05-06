@@ -19,7 +19,7 @@ public class EmpresaMapper {
         dto.setDistrito(empresaEntity.getDistrito());
         dto.setProvincia(empresaEntity.getProvincia());
         dto.setDepartamento(empresaEntity.getDepartamento());
-        dto.setEsAgenteRetencion(empresaEntity.getEsAgenteRetencion());
+        dto.setEsAgenteRetencion(empresaEntity.isEsAgenteRetencion());
         dto.setUsuaCreate(empresaEntity.getUsuaCrea());
         dto.setDateCreate(empresaEntity.getDateCreate());
         dto.setUsuaModif(empresaEntity.getUsuaModif());

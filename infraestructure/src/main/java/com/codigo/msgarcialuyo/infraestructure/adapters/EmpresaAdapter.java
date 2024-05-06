@@ -42,7 +42,7 @@ public class EmpresaAdapter implements EmpresaServiceOut {
         empresaEntity.setTipoDocumento(sunatDto.getTipoDocumento());
         empresaEntity.setNumeroDocumento(sunatDto.getNumeroDocumento());
         empresaEntity.setCondicion(sunatDto.getCondicion());
-        empresaEntity.setEsAgenteRetencion(sunatDto.getEsAgenteRetencion());
+        empresaEntity.setEsAgenteRetencion(sunatDto.isEsAgenteRetencion());
 
         empresaEntity.setEstado(Constant.STATUS_ACTIVE);
         if(id == 0){
@@ -106,6 +106,8 @@ public class EmpresaAdapter implements EmpresaServiceOut {
         Optional<EmpresaEntity> empresaEntity = empresaRepository.findById(id);
         if(empresaEntity.isPresent()){
             EmpresaEntity empresaEntity1 = getEntity(empresaRequest, id);
+            empresaEntity1.setUsuaCrea(empresaEntity.get().getUsuaCrea());
+            empresaEntity1.setDateCreate(empresaEntity.get().getDateCreate());
             return  EmpresaMapper.fromEntity(empresaRepository.save(empresaEntity1));
         }else {
             throw new RuntimeException();
